@@ -44,10 +44,11 @@ const BrandingPanel = () => {
       </div>
 
       {/* Left Image - Sidebar panel - Crossfade between light and dark */}
+      {/* Responsive: lg(1024px) -> xl(1280px) -> 2xl(1536px) -> 3xl(1920px) -> 4xl(2560px) -> 5xl(3840px) */}
       <img
         src={LEFT_IMAGE_LIGHT}
         alt="Left panel light"
-        className="absolute top-[42%] left-0 h-1/2 -translate-x-[59%] xl:-translate-x-[59%] 2xl:-translate-x-[59%] skew-x-[18.521deg] rounded-[24px] transition-opacity duration-500 ease-in-out"
+        className="absolute top-[42%] left-0 w-auto h-[350px] lg:h-[350px] xl:h-[420px] 2xl:h-1/2 3xl:h-[55%] 4xl:h-[60%] 5xl:h-[65%] -translate-x-[59%] lg:-translate-x-[59%] xl:-translate-x-[59%] 2xl:-translate-x-[59%] 3xl:-translate-x-[59%] 4xl:-translate-x-[59%] 5xl:-translate-x-[59%] skew-x-[18.521deg] rounded-[24px] transition-all duration-500 ease-in-out"
         style={{
           boxShadow: 'var(--box-shadow-left)',
           opacity: isDark ? 0 : 1,
@@ -56,7 +57,7 @@ const BrandingPanel = () => {
       <img
         src={LEFT_IMAGE_DARK}
         alt="Left panel dark"
-        className="absolute top-[42%] left-0 h-1/2 -translate-x-[59%] xl:-translate-x-[59%] 2xl:-translate-x-[59%] skew-x-[18.521deg] rounded-[24px] transition-opacity duration-500 ease-in-out"
+        className="absolute top-[42%] left-0 w-auto h-[350px] lg:h-[350px] xl:h-[420px] 2xl:h-1/2 3xl:h-[55%] 4xl:h-[60%] 5xl:h-[65%] -translate-x-[59%] lg:-translate-x-[59%] xl:-translate-x-[59%] 2xl:-translate-x-[59%] 3xl:-translate-x-[59%] 4xl:-translate-x-[59%] 5xl:-translate-x-[59%] skew-x-[18.521deg] rounded-[24px] transition-all duration-500 ease-in-out"
         style={{
           boxShadow: 'var(--box-shadow-left)',
           opacity: isDark ? 1 : 0,
@@ -64,10 +65,11 @@ const BrandingPanel = () => {
       />
 
       {/* Right Image - Browser window - Crossfade between light and dark */}
+      {/* Responsive: lg(1024px) -> xl(1280px) -> 2xl(1536px) -> 3xl(1920px) -> 4xl(2560px) -> 5xl(3840px) */}
       <img
         src={RIGHT_IMAGE_LIGHT}
         alt="Right panel light"
-        className="absolute top-[12.2%] left-0 h-1/2 translate-x-[38%] xl:translate-x-[38%] 2xl:translate-x-[38%] skew-x-[18.521deg] rounded-[24px] transition-opacity duration-500 ease-in-out"
+        className="absolute top-[12.2%] left-0 w-auto h-[350px] lg:h-[350px] xl:h-[420px] 2xl:h-1/2 3xl:h-[55%] 4xl:h-[60%] 5xl:h-[65%] translate-x-[38%] lg:translate-x-[38%] xl:translate-x-[38%] 2xl:translate-x-[38%] 3xl:translate-x-[38%] 4xl:translate-x-[38%] 5xl:translate-x-[38%] skew-x-[18.521deg] rounded-[24px] transition-all duration-500 ease-in-out"
         style={{
           boxShadow: 'var(--box-shadow-right)',
           opacity: isDark ? 0 : 1,
@@ -76,7 +78,7 @@ const BrandingPanel = () => {
       <img
         src={RIGHT_IMAGE_DARK}
         alt="Right panel dark"
-        className="absolute top-[12.2%] left-0 h-1/2 translate-x-[38%] xl:translate-x-[38%] 2xl:translate-x-[38%] skew-x-[18.521deg] rounded-[24px] transition-opacity duration-500 ease-in-out"
+        className="absolute top-[12.2%] left-0 w-auto h-[350px] lg:h-[350px] xl:h-[420px] 2xl:h-1/2 3xl:h-[55%] 4xl:h-[60%] 5xl:h-[65%] translate-x-[38%] lg:translate-x-[38%] xl:translate-x-[38%] 2xl:translate-x-[38%] 3xl:translate-x-[38%] 4xl:translate-x-[38%] 5xl:translate-x-[38%] skew-x-[18.521deg] rounded-[24px] transition-all duration-500 ease-in-out"
         style={{
           boxShadow: 'var(--box-shadow-right)',
           opacity: isDark ? 1 : 0,
