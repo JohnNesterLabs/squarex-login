@@ -16,24 +16,34 @@ const OKTA_ICON_DARK = `${BASE}Okta--Streamline-Svg-Logos%202%20Dark.svg`
 const Login = () => {
   const { isDark } = useTheme()
 
-  const backgroundGradient = isDark ? BACKGROUND_GRADIENT_DARK : BACKGROUND_GRADIENT_LIGHT
-  const oktaIcon = isDark ? OKTA_ICON_DARK : OKTA_ICON_LIGHT
-
   return (
-    <div
-      className="min-h-screen flex transition-all duration-500 ease-in-out"
-      style={{
-        backgroundImage: `url("${backgroundGradient}")`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
+    <div className="min-h-screen flex relative overflow-hidden">
+      {/* Background gradients - Crossfade between light and dark */}
+      <div
+        className="absolute inset-0 transition-opacity duration-500 ease-in-out"
+        style={{
+          backgroundImage: `url("${BACKGROUND_GRADIENT_LIGHT}")`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: isDark ? 0 : 1,
+        }}
+      />
+      <div
+        className="absolute inset-0 transition-opacity duration-500 ease-in-out"
+        style={{
+          backgroundImage: `url("${BACKGROUND_GRADIENT_DARK}")`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: isDark ? 1 : 0,
+        }}
+      />
+
       {/* Left Side - Branding Section */}
       <BrandingPanel />
 
       {/* Right Side - Login Form */}
       <div
-        className="w-full lg:w-1/2 flex items-center justify-center p-8 transition-all duration-500 ease-in-out"
+        className="relative z-10 w-full lg:w-1/2 flex items-center justify-center p-8 transition-all duration-500 ease-in-out"
         style={{
           backgroundColor: 'var(--bg-secondary)',
           filter: 'var(--form-drop-shadow)',
@@ -70,7 +80,21 @@ const Login = () => {
                 backdropFilter: 'blur(10px)',
               }}
             >
-              <img src={oktaIcon} alt="Okta" className="w-5 h-5" />
+              {/* Okta icon - Crossfade between light and dark */}
+              <div className="relative w-5 h-5">
+                <img 
+                  src={OKTA_ICON_LIGHT} 
+                  alt="Okta" 
+                  className="absolute w-5 h-5 transition-opacity duration-500 ease-in-out"
+                  style={{ opacity: isDark ? 0 : 1 }}
+                />
+                <img 
+                  src={OKTA_ICON_DARK} 
+                  alt="Okta" 
+                  className="absolute w-5 h-5 transition-opacity duration-500 ease-in-out"
+                  style={{ opacity: isDark ? 1 : 0 }}
+                />
+              </div>
               <span 
                 className="text-sm font-medium transition-all duration-500 ease-in-out"
                 style={{ color: 'var(--text-primary)' }}
