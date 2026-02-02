@@ -16,40 +16,70 @@ const LOGO_DARK = `${BASE}SquareX%20Logo%20Dark.svg`
 const BrandingPanel = () => {
   const { isDark, toggleTheme } = useTheme()
 
-  const leftImage = isDark ? LEFT_IMAGE_DARK : LEFT_IMAGE_LIGHT
-  const rightImage = isDark ? RIGHT_IMAGE_DARK : RIGHT_IMAGE_LIGHT
-  const logo = isDark ? LOGO_DARK : LOGO_LIGHT
-
   return (
     <div 
-      className="hidden lg:flex lg:w-1/2 justify-between items-center relative overflow-hidden transition-all duration-500 ease-in-out"
+      className="hidden lg:flex lg:w-1/2 justify-between items-center relative z-10 overflow-hidden transition-all duration-500 ease-in-out"
     >
       {/* Logo - positioned at top left - Click to toggle theme */}
+      {/* Crossfade between light and dark logos */}
       <div 
-        className="absolute top-[32px] left-[48px] flex items-center gap-2 z-10 cursor-pointer transition-opacity duration-200"
+        className="absolute top-[32px] left-[48px] flex items-center gap-2 z-10 cursor-pointer"
         onClick={toggleTheme}
         title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
       >
-        <img src={logo} alt="SquareX Logo" className="h-[30px]" />
+        <div className="relative h-[30px] w-[120px]">
+          <img 
+            src={LOGO_LIGHT} 
+            alt="SquareX Logo" 
+            className="absolute h-[30px] transition-opacity duration-500 ease-in-out"
+            style={{ opacity: isDark ? 0 : 1 }}
+          />
+          <img 
+            src={LOGO_DARK} 
+            alt="SquareX Logo" 
+            className="absolute h-[30px] transition-opacity duration-500 ease-in-out"
+            style={{ opacity: isDark ? 1 : 0 }}
+          />
+        </div>
       </div>
 
-      {/* Left Image - Sidebar panel */}
+      {/* Left Image - Sidebar panel - Crossfade between light and dark */}
       <img
-        src={leftImage}
-        alt="Left panel"
-        className="absolute top-[42%] left-0 h-1/2 -translate-x-[59%] xl:-translate-x-[59%] 2xl:-translate-x-[59%] skew-x-[18.521deg] rounded-[24px] transition-all duration-500 ease-in-out"
+        src={LEFT_IMAGE_LIGHT}
+        alt="Left panel light"
+        className="absolute top-[42%] left-0 h-1/2 -translate-x-[59%] xl:-translate-x-[59%] 2xl:-translate-x-[59%] skew-x-[18.521deg] rounded-[24px] transition-opacity duration-500 ease-in-out"
         style={{
           boxShadow: 'var(--box-shadow-left)',
+          opacity: isDark ? 0 : 1,
+        }}
+      />
+      <img
+        src={LEFT_IMAGE_DARK}
+        alt="Left panel dark"
+        className="absolute top-[42%] left-0 h-1/2 -translate-x-[59%] xl:-translate-x-[59%] 2xl:-translate-x-[59%] skew-x-[18.521deg] rounded-[24px] transition-opacity duration-500 ease-in-out"
+        style={{
+          boxShadow: 'var(--box-shadow-left)',
+          opacity: isDark ? 1 : 0,
         }}
       />
 
-      {/* Right Image - Browser window */}
+      {/* Right Image - Browser window - Crossfade between light and dark */}
       <img
-        src={rightImage}
-        alt="Right panel"
-        className="absolute top-[12.2%] left-0 h-1/2 translate-x-[38%] xl:translate-x-[38%] 2xl:translate-x-[38%] skew-x-[18.521deg] rounded-[24px] transition-all duration-500 ease-in-out"
+        src={RIGHT_IMAGE_LIGHT}
+        alt="Right panel light"
+        className="absolute top-[12.2%] left-0 h-1/2 translate-x-[38%] xl:translate-x-[38%] 2xl:translate-x-[38%] skew-x-[18.521deg] rounded-[24px] transition-opacity duration-500 ease-in-out"
         style={{
           boxShadow: 'var(--box-shadow-right)',
+          opacity: isDark ? 0 : 1,
+        }}
+      />
+      <img
+        src={RIGHT_IMAGE_DARK}
+        alt="Right panel dark"
+        className="absolute top-[12.2%] left-0 h-1/2 translate-x-[38%] xl:translate-x-[38%] 2xl:translate-x-[38%] skew-x-[18.521deg] rounded-[24px] transition-opacity duration-500 ease-in-out"
+        style={{
+          boxShadow: 'var(--box-shadow-right)',
+          opacity: isDark ? 1 : 0,
         }}
       />
     </div>
