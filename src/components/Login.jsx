@@ -43,7 +43,7 @@ const Login = () => {
 
       {/* Right Side - Login Form */}
       <div
-        className="relative z-10 w-full lg:w-1/2 flex items-center justify-center p-8 transition-all duration-500 ease-in-out"
+        className="relative z-10 w-full md:w-1/2 flex items-center justify-center p-8 transition-all duration-500 ease-in-out"
         style={{
           backgroundColor: 'var(--bg-secondary)',
           filter: 'var(--form-drop-shadow)',
