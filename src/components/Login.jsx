@@ -15,7 +15,7 @@ const BACKGROUNDS = [
 ]
 
 const AUTH_BUTTON_CLASS =
-  'w-full h-10 flex items-center justify-center gap-3 px-4 rounded-lg cursor-pointer transition-all duration-500 ease-in-out hover:opacity-80'
+  'w-full h-10 flex items-center justify-center gap-3 px-4 rounded-lg cursor-pointer transition-all duration-500 ease-in-out'
 const AUTH_BUTTON_STYLE = {
   backgroundColor: 'var(--bg-button)',
   borderWidth: '1.5px',
@@ -133,7 +133,7 @@ const Login = () => {
 
           <a
             href="#"
-            className="flex items-center justify-center gap-2 font-medium transition-all duration-500 ease-in-out hover:opacity-70"
+            className="flex items-center justify-center gap-2 font-medium transition-all duration-500 ease-in-out"
             style={{ color: 'var(--text-primary)' }}
           >
             Sign in with email
